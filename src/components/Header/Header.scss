@@ -1,0 +1,17 @@
+.header {
+	// .header__body
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	// .header__title
+	&__title {
+		font-size: 2rem;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 5px;
+	}
+	// .header__icon
+	&__icon {}
+}

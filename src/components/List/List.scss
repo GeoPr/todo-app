@@ -1,0 +1,99 @@
+.list {
+  background: hsl(235, 24%, 19%);
+  // .list__body
+  &__body {
+    display: grid;
+    row-gap: 10px;
+  }
+  // .list__item
+  &__item {
+    padding: 20px;
+    border-bottom: 1px solid hsl(234, 11%, 52%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    div {
+      display: flex;
+      align-items: center;
+      label {
+        cursor: pointer;
+        input {
+          display: none;
+        }
+        span {
+          display: block;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          border: 1px solid hsl(237, 14%, 26%);
+          margin: 0px 20px 0px 0px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      span {
+        transition: all 0.5s ease 0s;
+        display: flex;
+        align-items: center;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background: hsl(234, 11%, 52%);
+          transition: all 0.5s ease 0s;
+        }
+        &._completed {
+          color: hsl(234, 11%, 52%);
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+    button {
+      background: transparent;
+    }
+  }
+  // .list__actions
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+}
+
+.actions-list {
+  // .actions-list__length
+  &__length {
+    color: hsl(234, 11%, 52%);
+    font-size: 14px;
+  }
+  // .actions-list__buttons
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+  // .actions-list__button
+  &__button {
+    background: transparent;
+    transition: all 0.5s ease 0s;
+    font-size: 14px;
+    color: hsl(234, 11%, 52%);
+    @media (min-width: 991.98px) {
+      &:hover {
+        color: hsl(220, 98%, 61%);
+      }
+    }
+    &._active {
+      color: hsl(220, 98%, 61%);
+    }
+    &:not(:last-child) {
+      margin: 0px 15px 0px 0px;
+    }
+  }
+}
